@@ -1,0 +1,78 @@
+#include <stdio.h>
+
+double triangle_area(double base, double height);
+double square_area(double side);
+double rectangle_area(double length, double width);
+double circle_area(double radius);
+double parallelogram_area(double base, double height);
+
+int main() {
+    int option;
+    double base, height, side, length, width, radius, area;
+    
+    printf("Select an option:\n");
+    printf("1. Triangle\n");
+    printf("2. Square\n");
+    printf("3. Rectangle\n");
+    printf("4. Circle\n");
+    printf("5. Parallelogram\n");
+    printf("Enter option number: ");
+    scanf("%d", &option);
+    
+    switch (option) {
+        case 1:
+            printf("Enter base and height of the triangle: ");
+            scanf("%lf %lf", &base, &height);
+            area = triangle_area(base, height);
+            printf("Area of the triangle = %lf\n", area);
+            break;
+        case 2:
+            printf("Enter the side of the square: ");
+            scanf("%lf", &side);
+            area = square_area(side);
+            printf("Area of the square = %lf\n", area);
+            break;
+        case 3:
+            printf("Enter length and width of the rectangle: ");
+            scanf("%lf %lf", &length, &width);
+            area = rectangle_area(length, width);
+            printf("Area of the rectangle = %lf\n", area);
+            break;
+        case 4:
+            printf("Enter the radius of the circle: ");
+            scanf("%lf", &radius);
+            area = circle_area(radius);
+            printf("Area of the circle = %lf\n", area);
+            break;
+        case 5:
+            printf("Enter base and height of the parallelogram: ");
+            scanf("%lf %lf", &base, &height);
+            area = parallelogram_area(base, height);
+            printf("Area of the parallelogram = %lf\n", area);
+            break;
+        default:
+            printf("Invalid option.\n");
+    }
+    
+    return 0;
+}
+
+double triangle_area(double base, double height) {
+    return 0.5 * base * height;
+}
+
+double square_area(double side) {
+    return side * side;
+}
+
+double rectangle_area(double length, double width) {
+    return length * width;
+}
+
+double circle_area(double radius) {
+    return 3.14159265 * radius * radius;
+}
+
+double parallelogram_area(double base, double height) {
+    return base * height;
+}
